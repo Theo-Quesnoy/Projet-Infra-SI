@@ -1,9 +1,12 @@
 # Projet Infra/SI
 
 ## Sommaire
-[1. Prérequis](#1-prerequis)
+[1. Prérequis](#1-prérequis)
+
 [2. Mise en place de la solution](#2-mise-en-place-de-la-solution)
+
 [3. Utilisation de la solution](#3-utilisation-de-la-solution)
+
 [4. Matrice de test](#4-matrice-de-test)
 
 
