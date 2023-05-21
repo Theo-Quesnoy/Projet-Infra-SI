@@ -1,12 +1,16 @@
 # Projet Infra/SI
 
 ## Sommaire
-[General Info]
+[1. Prérequis](#1-prerequis)
+[2. Mise en place de la solution](#2-mise-en-place-de-la-solution)
+[3. Utilisation de la solution](#3-utilisation-de-la-solution)
+[4. Matrice de test](#4-matrice-de-test)
 
-## Prérequis
+
+## 1. Prérequis
 - Avoir un hyperviseur (VirtualBox, VMWare, Hyper-V, ...)
 
-## Mise en place de la solution
+## 2. Mise en place de la solution
 - Création de 5 VM (1 par serveur) Debian 11
 - Création d'un utilisateur `user1` avec les droits sudo sur chaque serveur 
     ```bash
@@ -37,7 +41,7 @@
     * Récupérer le contenu du fichier `keepalived.conf` adéquat et l'inclure dans le fichier `keepalived.conf` créé dans les serveurs WordPress [1](./VM_Wordpress1/keepalived.conf) et [2](./VM_Wordpress2/keepalived.conf), ainsi que sur les serveurs NGINX [1](./VM_NGINX1/keepalived.conf) et [2](./VM_NGINX2/keepalived.conf).
     * Récupérer le contenu du fichier `nginx.conf` adéquat et l'inclure dans le fichier `nginx.conf` créé dans les serveurs NGINX [1](./VM_NGINX1/nginx.conf) et [2](./VM_NGINX2/nginx.conf).
 
-## Utilisation de la solution
+## 3. Utilisation de la solution
 ### Commandes Docker :
 - Création et démarrage des contenaires Docker :
     ```bash
@@ -57,7 +61,7 @@ Une fois tout les contenaires démarrés, il est possible d'accéder au site Wor
 ![](https://hackmd.io/_uploads/ryZXX_vH3.png)
 
 
-### Matrice de test
+### 4. Matrice de test
 
 - Si vous éteignez une VM Wordpress ou NGINX, la page d'acceuil restera telle qu'elle est
 
