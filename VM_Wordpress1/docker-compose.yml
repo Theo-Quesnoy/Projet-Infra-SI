@@ -1,0 +1,25 @@
+version: "3.9"
+services:
+  # Cluster de serveurs WordPress
+  wordpress:
+    image: wordpress:latest
+    ports:
+      - "8000:80"
+    environment:
+      - WORDPRESS_DB_HOST=192.168.20.10
+      - WORDPRESS_DB_NAME=db_wp
+      - WORDPRESS_DB_USER=user_db
+      - WORDPRESS_DB_PASSWORD=P@ssword
+
+  keepalived:
+    image: angelnu/keepalived
+    build: ./
+    privileged: true
+    volumes:
+      - ./keepalived.conf:/etc/keepalived/keepalived.conf
+    restart: on-failure:3
+    network_mode: "host"
+    cap_add:
+      - NET_ADMIN
+      - NET_BROADCAST
+      - NET_RAW

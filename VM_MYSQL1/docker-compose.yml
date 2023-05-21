@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  db:
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    restart: always
+    command: --server-id=1 --log-bin=mysql-bin --binlog-do-db=db_wp --binlog-format=row --replicate-do-db=db_wp
+    environment:
+      - MYSQL_ROOT_PASSWORD=P@ssword
+      - MYSQL_DATABASE=db_wp
+      - MYSQL_USER=user_db
+      - MYSQL_PASSWORD=P@ssword
+    volumes:
+      - ./data:/var/lib/mysql
